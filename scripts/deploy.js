@@ -6,9 +6,9 @@ task("deploy", "Deploys Token.sol contract").setAction(async function (
 ) {
   const [deployer] = await hre.ethers.getSigners();
 
-  const Token = await hre.ethers.getContractFactory("Token", deployer);
-  const token = await Token.deploy(5000000, "NiceToken", "NTKN", 18);
+  const Token = await hre.ethers.getContractFactory("PiggyBank", deployer);
+  const token = await Token.deploy(5000000, "PiggyBank", "PIG", 18);
 
   await token.deployed();
-  console.log(`Token Contract deployed to address: ${token.address}`);
+  console.log(`Piggy Bank Contract deployed to address: ${token.address}`);
 });

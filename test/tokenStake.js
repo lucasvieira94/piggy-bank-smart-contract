@@ -10,8 +10,8 @@ describe("Token Stake", function () {
 
     it("Should be possible for the contract owner to stake some tokens", async function () {
         accounts = await ethers.getSigners();
-        contractFactory = await ethers.getContractFactory("Token");
-        token = await contractFactory.deploy(5000000, "StakableToken", "STKN", 18);
+        contractFactory = await ethers.getContractFactory("PiggyBank");
+        token = await contractFactory.deploy(5000000, "PiggyBank", "PIG", 18);
         await token.deployed();
         owner = accounts[0];
         let totalSupply = await token.totalSupply();

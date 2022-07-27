@@ -9,8 +9,8 @@ describe("Token Setup", function () {
 
   it("Should have the correct setup", async function () {
     accounts = await ethers.getSigners();
-    contractFactory = await ethers.getContractFactory("Token");
-    token = await contractFactory.deploy(5000000, "NiceToken", "NTKN", 18);
+    contractFactory = await ethers.getContractFactory("PiggyBank");
+    token = await contractFactory.deploy(5000000, "PiggyBank", "PIG", 18);
     await token.deployed();
     owner = accounts[0];
     const supply = await token.totalSupply();
@@ -33,13 +33,13 @@ describe("Token Setup", function () {
 
     assert.equal(
       tokenName,
-      "NiceToken",
+      "Piggy Bank",
       "Contract has not the correct name"
     );
 
     assert.equal(
       tokenSymbol,
-      "NTKN",
+      "PIG",
       "Contract has not the correct symbol"
     );
 

@@ -25,8 +25,8 @@ describe("Token Trade", function () {
 
     it("Contract initial order setup", async function () {
         accounts = await ethers.getSigners();
-        contractFactory = await ethers.getContractFactory("Token");
-        token = await contractFactory.deploy(5000000, "TradableToken", "TTKN", 18);
+        contractFactory = await ethers.getContractFactory("PiggyBank");
+        token = await contractFactory.deploy(5000000, "PiggyBank", "PIG", 18);
         await token.deployed();
         owner = accounts[0];
 

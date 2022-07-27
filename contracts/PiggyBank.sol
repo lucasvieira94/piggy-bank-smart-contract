@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "./Stakable.sol";
 import "./Tradable.sol";
 
-contract Token is Ownable, Stakable, Tradable {
+contract PiggyBank is Ownable, Stakable, Tradable {
     uint256 private _totalSupply;
     uint256 private _currentTokenPrice;
     uint8 private _decimals;
