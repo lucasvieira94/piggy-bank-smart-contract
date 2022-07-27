@@ -1,4 +1,6 @@
-# Tradable ERC-20 Smart Contract
+# Piggy Bank Smart Contract
+
+Project of a Fungible Token Smart Contract built following the ERC-20 protocol. This contract also have features for Staking and Trading tokens. It was developed using Solidity and Hardhat.
 
 This project was implemented to educational purposes. Use as you wish.
 
@@ -18,9 +20,4 @@ npx hardhat deploy
 To test:
 ```shell
 npx hardhat test
-```
-
-To test only trading functionality:
-```shell
-npx hardhat test --grep Trade
 ```
