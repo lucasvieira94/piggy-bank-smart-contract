@@ -1,7 +1,7 @@
 const { assert, expect } = require("chai");
 const { ethers } = require("hardhat");
 
-const parseOrdersToObj = (orders) => {
+export const parseOrdersToObj = (orders) => {
     const parsedOrders = orders.map((order) => {
         return {
             id: order.id.toNumber(),
