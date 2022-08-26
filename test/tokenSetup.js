@@ -10,7 +10,7 @@ describe("Token Setup", function () {
   it("Should have the correct setup", async function () {
     accounts = await ethers.getSigners();
     contractFactory = await ethers.getContractFactory("PiggyBank");
-    token = await contractFactory.deploy(5000000, "PiggyBank", "PIG", 18);
+    token = await contractFactory.deploy(5000000, "Piggy Bank", "PIG", 18);
     await token.deployed();
     owner = accounts[0];
     const supply = await token.totalSupply();

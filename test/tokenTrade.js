@@ -1,19 +1,7 @@
 const { assert, expect } = require("chai");
 const { ethers } = require("hardhat");
 
-export const parseOrdersToObj = (orders) => {
-    const parsedOrders = orders.map((order) => {
-        return {
-            id: order.id.toNumber(),
-            amount: order.amount.toNumber(),
-            price: parseFloat(ethers.utils.formatEther(order.price)),
-            seller: order.seller,
-            active: order.active
-        }
-    });
-
-    return parsedOrders;
-}
+const { parseOrdersToObj } = require("../utils/helpers");
 
 describe("Token Trade", function () {
     let accounts;

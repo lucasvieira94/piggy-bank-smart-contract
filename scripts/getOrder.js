@@ -1,5 +1,5 @@
 const { task } = require("hardhat/config");
-const { parseOrdersToObj } = require("../test/tokenTrade");
+const { parseOrdersToObj } = require("../utils/helpers");
 
 task("getorder", "Get Placed Order to Sell Piggy Bank Tokens")
     .addPositionalParam("contract")

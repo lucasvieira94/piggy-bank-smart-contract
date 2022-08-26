@@ -1,5 +1,4 @@
 const { task } = require("hardhat/config");
-const { ethers } = require("hardhat");
 
 task("buyorder", "Buy Piggy Bank Tokens from placed Order")
     .addPositionalParam("contract")
@@ -17,8 +16,8 @@ task("buyorder", "Buy Piggy Bank Tokens from placed Order")
     const contract = Contract.attach(taskArguments.contract);
 
     const order = await token.getOrder(taskArguments.orderId);
-    const price = ethers.utils.formatEther(order.price) * parseInt(taskArguments.amount);
-    const tx = await contract.connect(accounts[id]).buyOrder(order.id, taskArguments.amount, { value: ethers.utils.parseEther(price.toString())});
+    const price = hre.ethers.utils.formatEther(order.price) * parseInt(taskArguments.amount);
+    const tx = await contract.connect(accounts[id]).buyOrder(order.id, taskArguments.amount, { value: hre.ethers.utils.parseEther(price.toString())});
     await tx.wait();
 
     console.log("Buy Order tx: ", tx);
